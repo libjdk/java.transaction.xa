@@ -48,7 +48,7 @@ void java$transaction$xa$LibEventAction(int32_t eventType, void* eventData) {
 		java$transaction$xa$PreloadClass(eventData);
 	}
 	if (eventType == JCPP_LIB_EVENT_TYPE_THREAD_START) {
-		$setCurrentObjectStack();
+		$onLibThreadStart(eventData);
 	}
 }
 
