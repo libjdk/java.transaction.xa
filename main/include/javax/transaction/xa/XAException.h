@@ -95,8 +95,10 @@ public:
 	static const int32_t XAER_DUPID = (-8);
 	static const int32_t XAER_OUTSIDE = (-9);
 	XAException(const XAException& e);
-	XAException wrapper$();
-	virtual void throwWrapper$() override;
+	virtual void throw$() override;
+	inline XAException* operator ->() {
+		return (XAException*)throwing$;
+	}
 };
 
 		} // xa
